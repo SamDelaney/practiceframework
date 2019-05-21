@@ -1,17 +1,18 @@
 import * as constants from "../constants";
 import { Action } from "redux";
+import { IWord } from "../types";
 
 export interface ActionWithPayload<T> extends Action {
   payload: T;
 }
 
-export interface AddVern extends ActionWithPayload<string> {
-  type: constants.ADD_VERN;
-  payload: string;
+export interface AddWord extends ActionWithPayload<IWord> {
+  type: constants.ADD_WORD;
+  payload: IWord;
 }
 
-export type WordAction = AddVern; // | OtherActionInterfaces
+export type WordAction = AddWord; // | OtherActionInterfaces
 
-export function AddVern(text: string): AddVern {
-  return { type: constants.ADD_VERN, payload: text };
+export function AddWord(word: IWord): AddWord {
+  return { type: constants.ADD_WORD, payload: word };
 }

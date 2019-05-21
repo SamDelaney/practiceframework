@@ -8,8 +8,6 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { rootReducer } from "./reducers/index";
 import { StoreState } from "./types/index";
-import { WordAction, AddVern, ActionWithPayload } from "./actions";
-import Redu from "./containers/Redu";
 
 export const store: Store<StoreState> = createStore(rootReducer);
 

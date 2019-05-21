@@ -1,24 +1,24 @@
 import { connect } from "react-redux";
 import { Dispatch } from "react";
 
-import Redu from "../components/Redu";
-import * as actions from "../actions/";
+import EntryForm from "../components/EntryForm";
+import * as actions from "../actions";
 import { StoreState } from "../types/index";
 
-export function mapStateToProps({ word, languageName }: StoreState) {
+export function mapStateToProps({ languageName }: StoreState) {
   return {
-    word,
     name: languageName
   };
 }
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.WordAction>) {
   return {
-    AddVern: (text: string) => dispatch(actions.AddVern(text))
+    AddWord: (vern: string, gloss: string) =>
+      dispatch(actions.AddWord({ vern, gloss }))
   };
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Redu);
+)(EntryForm);

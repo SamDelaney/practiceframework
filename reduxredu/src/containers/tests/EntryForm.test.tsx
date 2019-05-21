@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Redu from "../Redu";
+import EntryForm from "../EntryFormContainer";
 import { store } from "../..";
 import { Provider } from "react-redux";
 
@@ -8,7 +8,7 @@ it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(
     <Provider store={store}>
-      <Redu />
+      <EntryForm />
     </Provider>,
     div
   );

@@ -1,6 +1,6 @@
 import { WordAction } from "../actions";
 import { StoreState } from "../types/index";
-import { ADD_VERN } from "../constants/index";
+import { ADD_WORD } from "../constants/index";
 import { Action } from "react-redux/node_modules/redux";
 
 export function rootReducer(state: StoreState | undefined, action: Action) {
@@ -9,13 +9,16 @@ export function rootReducer(state: StoreState | undefined, action: Action) {
 }
 
 function InitializeStore(state: undefined, action: Action): StoreState {
-  return { word: "defaultword", languageName: "TypeScripts" };
+  return { words: [], languageName: "TestLanguageName" };
 }
 
 function wordReducer(state: StoreState, action: WordAction): StoreState {
   switch (action.type) {
-    case ADD_VERN:
-      return { ...state, word: action.payload };
+    case ADD_WORD:
+      return {
+        ...state,
+        words: state.words.concat(action.payload)
+      };
     default:
       return state;
   }

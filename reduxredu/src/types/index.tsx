@@ -1,4 +1,14 @@
 export interface StoreState {
   languageName: string;
-  word: string;
+  words: {
+    vern: string;
+    gloss: string;
+  }[];
 }
+
+export interface IWord {
+  vern: string;
+  gloss: string;
+}
+
+export type MaterialInputHelper = HTMLInputElement | HTMLTextAreaElement;

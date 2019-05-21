@@ -1,12 +1,12 @@
 import * as constants from "../constants";
-import { AddVern } from ".";
+import { AddWord } from ".";
 
 it("should add vernacular form", () => {
-  const text = "AddedInTesting";
+  const newWord = { vern: "TestVern", gloss: "TestGloss" };
   const expectedAction = {
-    type: constants.ADD_VERN,
-    payload: "AddedInTesting"
+    type: constants.ADD_WORD,
+    payload: { vern: "TestVern", gloss: "TestGloss" }
   };
-  const fn = AddVern(text);
+  const fn = AddWord(newWord);
   expect(fn).toEqual(expectedAction);
 });
